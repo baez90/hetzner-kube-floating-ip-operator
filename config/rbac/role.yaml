@@ -1,15 +1,32 @@
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  labels:
-    app.kubernetes.io/name: clusterrole
-    app.kubernetes.io/instance: manager-role
-    app.kubernetes.io/component: rbac
-    app.kubernetes.io/created-by: hetzner-kube-floating-ip-operator
-    app.kubernetes.io/part-of: hetzner-kube-floating-ip-operator
-    app.kubernetes.io/managed-by: kustomize
   name: manager-role
 rules:
-- apiGroups: [""]
-  resources: ["pods"]
-  verbs: ["get", "list", "watch"]
+- apiGroups:
+  - icb4dc0.de.icb4dc0.de
+  resources:
+  - floatingips
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - icb4dc0.de.icb4dc0.de
+  resources:
+  - floatingips/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - icb4dc0.de.icb4dc0.de
+  resources:
+  - floatingips/status
+  verbs:
+  - get
+  - patch
+  - update

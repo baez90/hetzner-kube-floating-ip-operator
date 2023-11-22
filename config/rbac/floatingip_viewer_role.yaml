@@ -1,0 +1,27 @@
+# permissions for end users to view floatingips.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: floatingip-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: hetzner-kube-floating-ip-operator
+    app.kubernetes.io/part-of: hetzner-kube-floating-ip-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: floatingip-viewer-role
+rules:
+- apiGroups:
+  - icb4dc0.de.icb4dc0.de
+  resources:
+  - floatingips
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - icb4dc0.de.icb4dc0.de
+  resources:
+  - floatingips/status
+  verbs:
+  - get

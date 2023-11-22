@@ -1,0 +1,12 @@
+apiVersion: icb4dc0.de.icb4dc0.de/v1alpha1
+kind: FloatingIP
+metadata:
+  labels:
+    app.kubernetes.io/name: floatingip
+    app.kubernetes.io/instance: floatingip-sample
+    app.kubernetes.io/part-of: hetzner-kube-floating-ip-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: hetzner-kube-floating-ip-operator
+  name: floatingip-sample
+spec:
+  # TODO(user): Add fields here

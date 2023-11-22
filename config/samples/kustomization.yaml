@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- icb4dc0.de_v1alpha1_floatingip.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
